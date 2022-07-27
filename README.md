@@ -1,12 +1,15 @@
 # YongseopKim
 
-(updated: 2022-06-16)
+(updated: 2022-07-27)
 
 ## Career
 
-SW Dev - On-Device AI Compiler/Runtime
+SW Dev - AI Compiler/Runtime
 
-2022~ **Develop Visual Studio Code Extension of ONE compiler toolchain**
+2022/07~ (in-house project)
+- ?
+
+2022/01~2022/06 **Develop Visual Studio Code Extension of ONE compiler toolchain**
 - Repo: [Samsung/ONE-vscode](https://github.com/Samsung/ONE-vscode)
 - Issues: [Tasks](https://github.com/Samsung/ONE-vscode/issues?q=assignee%3AYongseopKim), [Activity](https://github.com/Samsung/ONE-vscode/issues?q=mentions%3AYongseopKim)
 - PRs: [Tasks](https://github.com/Samsung/ONE-vscode/pulls?q=is%3Apr+author%3AYongseopKim), [Reviews](https://github.com/Samsung/ONE-vscode/pulls?q=is%3Apr+reviewed-by%3AYongseopKim)
