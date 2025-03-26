@@ -13,19 +13,19 @@ SurveyX 목적
 파이프라인 구조
 1. Preparation Phase
   1. References Acquisition: online/offline
-  2. Reference Pre-processing
-    - AttributeTree 생성
-    - 각 논문에서 핵심 정보를 트리 구조로 정리 -> AttributeForest
+    2. Reference Pre-processing
+        - AttributeTree 생성
+        - 각 논문에서 핵심 정보를 트리 구조로 정리 -> AttributeForest
 2. Generation Phase
-  1. Outline Generation
-    1. LLM이 1차적인 상위 구성 작성
-    2. AttributeTree를 Hint 삼아 구체적인 2차 아웃라인 작성
-    3. Outline Optimization: wndqhr, qnfvlfdygks sodyd wjdfl
-  2. Content Generation
-    - 각 섹션별로 AttributeTree를 Hint로 추출 with RAG
-  3. Post-Processing
-    - RAG 기반 Rewriting
-    - 표, 그림 등 생성
+    1. Outline Generation
+        1. LLM이 1차적인 상위 구성 작성
+        2. AttributeTree를 Hint 삼아 구체적인 2차 아웃라인 작성
+        3. Outline Optimization: wndqhr, qnfvlfdygks sodyd wjdfl
+    2. Content Generation
+        - 각 섹션별로 AttributeTree를 Hint로 추출 with RAG
+    3. Post-Processing
+        - RAG 기반 Rewriting
+        - 표, 그림 등 생성
 
 # 나
 
