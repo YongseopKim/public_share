@@ -21,7 +21,7 @@ AI 이전: **Tizen OS** - 네이티브 API 개발 및 관리와 WRT(웹 런타�
 
 2026년 7월 31일 퇴사하였습니다.
 
-[LinkedIn](https://www.linkedin.com/in/yongseop-kim-35658154/)
+[LinkedIn](https://www.linkedin.com/in/dragonseop/)
 
 ## 경력
 
