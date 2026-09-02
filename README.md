@@ -21,7 +21,7 @@ Within Samsung Electronics:
 
 Left Samsung Electronics on 2026-07-31.
 
-[LinkedIn](https://www.linkedin.com/in/yongseop-kim-35658154/)
+[LinkedIn](https://www.linkedin.com/in/dragonseop/)
 
 ## Career
 
