@@ -41,14 +41,15 @@ manufacturing, on-device SW --> DL (Deep Learning) --> LLM --> Agent --> finance
   - 월세, 인터넷 사용료, Office 365 같은 문서 작업 도구
   - (광고를 통해 인지하지 못 했지만) 뉴스, 포털, 검색 등
 - 인간이 한번에 하나의 작업(T; a task)을 하고, 그 작업 안에 몇 개(n)의 결제(P)가 있다면?
-  - a task = n * P (n은 작업이 정하는 수. 누가 하든 같음)
+  - a task = n x P (n은 사람이 할 때 그 작업에 든 결제 수)
   - a human: m tasks at once (m == 1), h hours a day (h == 8), r tasks an hour
-  - payments a day = n * m * h * r
+  - payments a day = n x m x h x r
 - 사람이 그 동안 하던 결제들을 Agent가 하게 된다면?
   - 8시간 일하는 노동자에서 24시간 쉬지 않는 Worker: h = 8 -> 24
   - 한 번에 하나만 하던 노동자에서 수백 개를 동시에 돌리는 Worker: m = 1 -> 한계 없음
   - 사람의 수십 배 속도로 처리하는 Worker: r -> r x 수십
-  - n은 그대로. 나머지 셋이 곱으로 늘어남
+  - 작업이 더 마이크로하게 쪼개져 결제도 쪼개지는 Worker: n -> n x k (정액제에서 종량제로)
+  - 넷이 모두 곱으로 늘어남
 - 폭발적으로 증가하는 결제는 쉽게 예측할 수 있음
 
 ### 두 단계로 올 Agent 시대
