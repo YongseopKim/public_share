@@ -9,7 +9,7 @@
 자세한 글
 - [Arc의 정의, 구성과 관계: Arc는 무엇이며, 무엇으로 이루어지고, 서로 어떻게 연결되는가](1008/arc-section-01-what.md)
 - [Arc의 선택 이유: USDC 하나로 지급과 가스비를 처리하고, 확정된 공유 원장 위에서 금융 기능을 연결한다](1008/arc-section-02-why.md)
-- [Arc 프로토콜: 거래 처리의 구조와 동작 및 신뢰 조건은 무엇인가](arc-section-03-protocol.md)
+- [Arc 프로토콜: 거래 처리의 구조와 동작 및 신뢰 조건은 무엇인가](1008/arc-section-03-protocol.md)
 - [기업 결제와 Arc: 기업은 결제를 어떻게 처리하며, Arc와 Circle 제품은 어떤 문제를 어디까지 해결하는가](1008/arc-section-04-business.md)
 - [Arc에서의 개발: Arc 위에 앱을 만들 때 무엇이 필요하고, 왜 필요하며, 어떻게 준비하는가](1008/arc-section-05-developer.md)
 - [Arc의 경제 구조: 이용 비용, 사업 수익과 참여자의 권리는 어떻게 연결되는가](1008/arc-section-06-value-token.md)
