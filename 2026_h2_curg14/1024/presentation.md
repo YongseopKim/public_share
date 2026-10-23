@@ -2,7 +2,7 @@
 
 Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 시스템이 왜 맞지 않는지 정리함
 
-## 1. 현재의 결제 시스템: 사람에게 맞춰져 있어 Agent에는 맞지 않음
+## 1. 현재의 결제 시스템: 사람 중심
 
 - 지금의 카드 결제 시스템은 **사람**을 기준으로 만들어짐
 - Agent가 결제하는 시대에는 이 기준이 맞지 않음
@@ -25,7 +25,7 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
   결제하는 쪽(Agent) != 책임지는 쪽(사람)
                                  -> 지금의 결제 시스템과 맞지 않음
 
-  필요한 것: 사람이 Agent에게 결제를 맡기는 일에 맞춘 시스템
+  지금의 시스템은 이런 차이를 전제하지 않음
 ```
 
 ```text
@@ -44,14 +44,14 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
   Who pays (Agent) != who is liable (Person)
                                   -> does not fit today's payment system
 
-  What is needed: a system built for people delegating payments to Agents
+  Today's system does not assume this difference
 ```
 
-- 위는 결제를 시작하는 쪽이 사람인지 Agent인지만 비교한 그림임
+- 이 비교에서 달라진 것은 결제를 시작하는 쪽(사람 또는 Agent) 하나뿐임
 - 지금의 결제는 결제하는 사람과 책임지는 사람이 같음
 - Agent 시대에는 둘이 갈라짐. 지금의 결제 시스템은 이 갈라짐을 전제하지 않음
 
-## 2. Agent: 판단하는 자동화
+## 2. Agent: 자동화 프로그램 + 판단
 
 - Agent는 자동화 프로그램의 한 종류임
 - 자동화 프로그램 가운데 **판단**이 들어간 것만 Agent라고 부름
@@ -82,9 +82,9 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 +--------------------------------------------------------+
 ```
 
-- 바깥 상자는 사람 대신 일을 처리하는 프로그램 전체임
-- 안쪽 두 상자는 판단이 있는지로 나뉨
-- 오른쪽(Agent)이 무엇인지는 2.1절(정의)에서, 왼쪽과 어떻게 다른지는 2.2절(Agent vs 자동화 프로그램)에서 다룸
+- 자동화 프로그램은 모두 사람 대신 일을 처리함
+- 자동화 프로그램은 판단이 있는지로 둘로 나뉨. 판단하는 쪽만 Agent임
+- Agent가 무엇인지는 2.1절(정의)에서, 판단 없는 자동화와 어떻게 다른지는 2.2절(Agent vs 자동화 프로그램)에서 다룸
 
 ### 2.1 정의: 사람 대신 일하고 스스로 판단함
 
@@ -96,7 +96,7 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 ```text
 [한국어]
   사람 ---- 목표와 조건 ----> Agent ---- 실행 ----> 결과
-                                |
+                                | 판단
                                 +-- 무엇을 할지 정함
                                 +-- 언제 할지 정함
                                 +-- 얼마에 할지 정함
@@ -105,7 +105,7 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 ```text
 [English]
   Person ---- goal and conditions ----> Agent ---- acts ----> Result
-                                          |
+                                          | judges
                                           +-- decides what to do
                                           +-- decides when to do it
                                           +-- decides how much to pay
@@ -144,9 +144,9 @@ Payment approval      Once, in advance          Not possible per
 Judgment              None                      Yes
 ```
 
-- 두 줄은 같은 일을 하는 프로그램을 나란히 놓은 것임
-- 위의 세 줄은 "누가 정하는가"를 비교함. 마지막 줄은 그 차이가 판단의 유무라는 점을 보여 줌
-- "결제 승인" 줄의 차이가 4절(필요성)의 핵심 문제로 이어짐
+- 자동화 프로그램과 Agent는 같은 일(사람 대신 결제)을 함
+- 차이는 "누가 정하는가"임. 자동화 프로그램은 사람이 미리 정하고, Agent는 스스로 정함. 이 차이가 곧 판단의 유무임
+- 결제 승인의 차이(처음에 한 번 미리 하는가, 거래마다 미리 할 수 없는가)가 4절(필요성)의 핵심 문제로 이어짐
 
 ```text
 [한국어]
@@ -197,9 +197,9 @@ Judgment              None                      Yes
            +-------------- feeds the result into the next decision ----<--+
 ```
 
-- 위는 사람이 정한 것을 정해진 순서대로 되풀이하는 흐름임. 결제할 상품과 금액이 처음부터 정해져 있음
-- 아래는 Agent가 매번 가격을 확인하고 비교해서 판단하는 단계가 들어 있음. 결제할 상품과 금액은 판단이 끝나야 정해짐
-- 아래에는 되돌아가는 화살표가 있음. Agent는 결과를 보고 다음 판단을 바꿀 수 있음
+- 정기배송은 사람이 정한 것을 정해진 순서대로 되풀이함. 결제할 상품과 금액이 처음부터 정해져 있음
+- 리테일 Agent는 매번 가격을 확인하고 비교해서 판단함. 결제할 상품과 금액은 판단이 끝나야 정해짐
+- Agent는 결과를 보고 다음 판단을 바꿀 수 있음
 - 예에 든 금액(한 달 10만 원)은 설명을 위한 값임
 
 ## 3. Agent Payment: Agent가 결제할 때 쓰는 기술
@@ -208,7 +208,7 @@ Judgment              None                      Yes
 - Agent가 결제와 관련된 일을 할 때 쓰는 기술들을 묶어 부르는 이름임
 - 같은 Agent Payment 기술을 여러 종류의 Agent가 함께 씀
   - 예: 리테일 Agent, 데이터를 사는 Agent, 클라우드 자원을 빌리는 Agent
-- 지금 나와 있는 기술을 하는 일에 따라 나누면 아래와 같음. 이 나눔은 이 글이 정한 것임
+- 분류(Category): 지금 나와 있는 기술을 하는 일에 따라 나누면 아래와 같음. 이 나눔은 이 글이 정한 것임
   - **결제 요청과 지급**: Agent가 API나 데이터 같은 자원을 요청하면 그 자리에서 값을 치르게 함
     - [x402](https://www.x402.org/): HTTP의 402 Payment Required 응답으로 결제를 요청하고 받음. Coinbase가 만들었고 지금은 x402 재단이 맡음
     - [MPP(Machine Payments Protocol)](https://mpp.dev/): API 요청, 도구 호출, 콘텐츠에 값을 매기는 규격. Stripe와 Tempo가 함께 만듦
@@ -250,11 +250,11 @@ Agent Payment           Technology Agents use to pay
 Payment rails              Cards, stablecoins, etc.
 ```
 
-- 맨 위는 일을 하는 Agent들임. 하는 일은 서로 다름
-- 가운데 Agent Payment는 이 Agent들이 결제할 때 공통으로 쓰는 기술임. 괄호 안은 위에서 든 기술의 예임
-- 맨 아래는 실제로 돈이 오가는 결제 수단임. Agent Payment는 이 위에서 동작함
+- 일을 하는 Agent들은 하는 일이 서로 다름
+- Agent Payment는 이 Agent들이 결제할 때 공통으로 쓰는 기술임. 괄호 안은 위에서 든 기술의 예임
+- 실제로 돈이 오가는 것은 카드, 스테이블코인 같은 결제 수단임. Agent Payment는 이 위에서 동작함
 
-### 3.1 흔한 오해: 쿠팡 쇼핑 Agent는 두 계층이 합쳐진 것임
+### 3.1 흔한 오해: 쿠팡 쇼핑 Agent(예시)는 두 계층이 합쳐진 것임
 
 - 사람들이 자주 드는 예: "쿠팡에서 어떤 물건이 싼지 살펴보고, 정기적으로 사 주는 에이전트가 있다면 그게 Agent Payment다."
 - 이 예는 두 계층을 하나로 보고 있음
@@ -286,14 +286,27 @@ Payment rails              Cards, stablecoins, etc.
   <---------- the judging part ----------> <------ the paying part ------->
 ```
 
-- 왼쪽은 리테일 Agent가 하는 일임. 가격을 비교하고 무엇을 얼마에 살지 정함
-- 세로선을 넘는 화살표는 "무엇을, 얼마에"라는 결정이 결제 쪽으로 넘어가는 것을 뜻함
-- 오른쪽은 Agent Payment가 하는 일임. 그 결정대로 쿠팡에 돈을 냄
+- 리테일 Agent는 가격을 비교하고 무엇을 얼마에 살지 정함
+- 그 결정("무엇을, 얼마에")이 결제 쪽으로 넘어감
+- Agent Payment는 그 결정대로 쿠팡에 돈을 냄
 
 ## 4. 필요성: Agent만을 위한 결제가 왜 필요한가
 
 - 구분하고 나면 질문이 나옴: **Agent도 그냥 지금의 결제 수단을 쓰면 되지 않나?**
-- 답은 세 단계로 이어짐
+- 먼저 인정할 것
+  - 대부분은 지금도 됨
+  - Agent 하나에 카드를 주고 한도를 걸 수 있고, 가상카드에도 한도와 기간을 걸 수 있음. 5.1절(가상카드가 이미 하는 것)에서 다룸
+- 문제는 아래 다섯 조건에서 생김
+
+| 조건                              | 막히는 것                                  |
+| --------------------------------- | ------------------------------------------ |
+| 결제 순간에 추가 인증(3DS)이 걸림 | OTP나 생체 인증은 카드 주인이 직접 해야 함 |
+| 가맹점이 봇을 막음                | 권한을 받은 Agent인지 가맹점이 알 수 없음  |
+| 아주 작은 금액을 자주 냄          | 카드는 건마다 고정 수수료가 붙음           |
+| Agent가 많고 금방 생겼다 사라짐   | 카드 발급과 해지가 따라가지 못함           |
+| 범위를 넘거나 잘못 판단한 결제    | 누가 책임지는지 정해져 있지 않음           |
+
+- 이 조건들이 왜 생기는지는 세 단계로 이어짐
 
 ```text
 [한국어]
@@ -324,21 +337,21 @@ Payment rails              Cards, stablecoins, etc.
   Setting the delegated scope raises problems of speed and granularity
 ```
 
-- 첫 칸은 4.1절(결제 시스템의 단위), 둘째와 셋째 칸은 4.2절(거래마다 미리 승인할 수 없음), 넷째 칸은 4.3절(속도와 세밀함)에서 다룸
-- 각 칸은 앞 칸의 결과로 나옴
+- 결제 시스템이 사람 단위라는 점은 4.1절(결제 시스템의 단위), 거래마다 승인할 수 없어 위임 범위가 필요하다는 점은 4.2절(거래마다 미리 승인할 수 없음), 속도와 세밀함의 문제는 4.3절(속도와 세밀함)에서 다룸
+- 각 단계는 앞 단계의 결과로 나옴
 
-### 4.1 결제 시스템의 단위: 책임을 지는 사람임
+### 4.1 결제 시스템의 단위: 사람
 
 - 지금의 리테일 결제 시스템은 **사람 한 명**을 단위로 함. 그래서 Agent가 결제하려면, 사람이 쓰는 신용카드를 Agent에게도 쥐여 줘야 함
 - 사람이 단위인 이유: 사람이 **책임을 지는 주체**이기 때문임. 시스템의 여러 부분이 이 전제 위에 있음
-  - **본인 확인**: 카드를 만들 때 실명과 신원을 확인함(KYC)
+  - **본인 확인**: 카드를 만들 때 실명과 신원을 확인함(KYC). 사람이 해결 가능
     - 예: 미국 은행 규정은 계좌를 연 뒤 고객의 신원을 확인하는 절차를 두라고 함. "The CIP must contain procedures for verifying the identity of the customer ... within a reasonable time after the account is opened."([31 CFR 1020.220](https://www.law.cornell.edu/cfr/text/31/1020.220))
   - **결제 순간의 인증**: 3DS는 결제하는 쪽이 카드 주인인지 인증하는 절차임. 위험이 높은 거래에서는 카드 주인이 직접 추가 확인을 해야 함
     - EMVCo: "EMV 3DS enables the exchange of data, or messages, between the merchant and the issuer to authenticate the consumer and approve the transaction."
     - 같은 글: "consumers must authenticate themselves using a challenge, such as a one-time passcode, knowledge-based questions, biometrics, or other methods."([EMVCo, EMV 3-D Secure](https://www.emvco.com/emv-technologies/3-d-secure/))
   - **사기 탐지**: 사람이 아닌 것이 결제하면 의심함. 봇의 결제는 사기로 보기 쉬움
     - Visa는 가맹점이 겪는 문제로 이것을 듦: "Managing bot detection systems that can mistakenly block legitimate agentic transactions"([Visa, Trusted Agent Protocol 발표](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21716.html))
-  - **분쟁 처리**: 잘못된 결제는 카드 주인이 이의를 제기하고, 카드사가 조사함
+  - **분쟁 처리**: 잘못된 결제는 카드 주인이 이의를 제기하고, 카드사가 조사함. 사람이 해결 가능
     - 예: 미국 대금 오류 규정은 카드 주인이나 그에게서 권한을 받은 사람이 하지 않은 결제를 대금 오류로 봄. "an extension of credit that is not made to the consumer or to a person who has actual, implied, or apparent authority to use the consumer's credit card"([12 CFR 1026.13](https://www.law.cornell.edu/cfr/text/12/1026.13))
 - 근거
   - Four Pillars의 x402 보고서: "오늘날 우리가 사용하는 모든 결제망은 사람이 거래를 시작한다는 전제 위에 구축되어 있다."([Four Pillars, "x402에 대한 모든 것"](https://research.4pillars.io/ko/research/all-about-x402), PDF 9쪽)
@@ -346,27 +359,28 @@ Payment rails              Cards, stablecoins, etc.
 
 ```text
 [한국어]
-                         본인 확인 (KYC)
+                         본인 확인 (KYC <- 사람이 해결 가능)
                                |
   결제 순간의 인증 ----- 사람 (카드 주인) ----- 사기 탐지
   (3DS)                        |                (사람이 아니면 의심)
                            분쟁 처리
-                     (카드 주인이 이의 제기)
+                     (카드 주인이 이의 제기 <- 사람이 해결 가능)
 ```
 
 ```text
 [English]
-                                  Identity check (KYC)
+                                  Identity check (KYC <- the person can handle it)
                                             |
   Payment-time authentication ---- Person (cardholder) ---- Fraud detection
   (3DS)                                     |               (suspects non-humans)
                                     Dispute handling
-                              (cardholder raises a dispute)
+                              (cardholder raises a dispute <- the person can handle it)
 ```
 
-- 가운데의 사람(카드 주인)에 네 가지가 모두 연결되어 있음
-- Agent를 가운데에 넣으면 네 연결이 모두 끊어짐
-  - Agent는 실명이 없고, 카드 주인 인증을 스스로 통과하기 어렵고, 봇으로 의심받고, 이의를 제기할 주체가 아님
+- 네 가지가 모두 사람(카드 주인)에 연결되어 있음
+- 이 가운데 본인 확인과 분쟁 처리는 Agent가 결제해도 사람이 해결할 수 있음. 카드는 사람이 만들고, 이의도 사람이 제기하면 됨
+- 사람 자리에 Agent를 넣으면 둘이 문제
+  - Agent는 결제 순간의 인증을 스스로 통과하기 어렵고, 봇으로 의심받음
 
 ### 4.2 판단이 만드는 문제: 거래마다 미리 승인할 수 없음
 
@@ -405,8 +419,8 @@ Payment rails              Cards, stablecoins, etc.
                        the transaction to approve is first decided here
 ```
 
-- 위는 승인할 대상이 처음부터 정해져 있음
-- 아래는 승인할 대상이 Agent의 판단 뒤에야 생김. 그래서 사람이 미리 승인할 수 없음
+- 정기배송과 자동이체는 승인할 대상이 처음부터 정해져 있음
+- Agent는 판단한 뒤에야 승인할 대상이 생김. 그래서 사람이 미리 승인할 수 없음
 
 - 그렇다고 거래마다 사람에게 물어보면, Agent에게 일을 맡긴 의미가 사라짐
 - 그래서 거래 하나하나를 승인하는 대신, **어디까지 맡길지**(위임 범위)를 미리 정해 주는 방식이 필요함
@@ -458,22 +472,22 @@ Payment rails              Cards, stablecoins, etc.
   Transaction 4 (outside the scope) ---> blocked
 ```
 
-- 위는 사람이 거래마다 끼어드는 방식임
-- 아래는 사람이 한 번만 범위를 정하고, 그 안의 거래는 Agent가 처리하는 방식임
+- 거래마다 승인하면 사람이 매번 끼어듦
+- 위임 범위를 쓰면 사람은 범위를 한 번만 정하고, 그 안의 거래는 Agent가 처리함
 - 범위를 벗어난 거래는 결제되지 않음
 
-### 4.3 위임 범위의 문제: 개수보다 속도와 세밀함
+### 4.3 위임 범위의 문제: 개수보다 속도와 세밀함이 중요
 
 - Agent가 하나라면 카드 한 장을 주고 한도를 걸면 됨. 그런데 Agent가 1000개라면?
 - 사실 개수 자체는 큰 문제가 아님. 회사는 이미 직원 1000명에게 법인카드를 나눠 줌
 - 진짜 문제는 두 가지임
   - **속도**: Agent는 필요할 때 새로 만들고, 일이 끝나면 없앰. 금방 생겼다가 사라지는 Agent마다 카드 발급부터 시작해야 한다면 맞지 않음
   - **세밀함**: Agent마다 한도와 용처를 따로 정하고, 일이 바뀌면 바로 바꾸거나 거둘 수 있어야 함
-- 이런 문제가 Agent Payment가 다루는 문제임
+- 이것이 Agent Payment가 푸는 가장 중요한 문제임
 
 ```text
 [한국어]
-[속도: Agent 하나의 일생]
+[문제: 속도]
 
   Agent 생성 --> 결제 권한 줌 --> 일 수행 --> 결제 권한 거둠 --> Agent 삭제
                   (카드 발급?)                  (카드 해지?)
@@ -483,7 +497,7 @@ Payment rails              Cards, stablecoins, etc.
 
 ```text
 [English]
-[Speed: the life of one Agent]
+[Problem: speed]
 
   Create Agent --> grant payment --> do work --> revoke payment --> delete Agent
                    (issue a card?)               (cancel the card?)
@@ -496,7 +510,7 @@ Payment rails              Cards, stablecoins, etc.
 
 ```text
 [한국어]
-[세밀함: Agent마다 다른 위임 범위 (예시)]
+[문제: 세밀함] (예시)
 
               한도         용처              기간
   Agent A     5만 원       식료품            이번 주
@@ -506,7 +520,7 @@ Payment rails              Cards, stablecoins, etc.
 
 ```text
 [English]
-[Granularity: a different delegated scope per Agent (example)]
+[Problem: granularity] (example)
 
               Limit          Use              Period
   Agent A     50,000 won     groceries        this week
@@ -518,8 +532,13 @@ Payment rails              Cards, stablecoins, etc.
 - 같은 사람이 맡긴 Agent라도 한도, 용처, 기간이 서로 다름
 - Agent C처럼 일이 끝나면 바로 권한을 거둘 수 있어야 함
 
-## 5. 반론: 가상카드로 되지 않는가
+## 5. 반론: Agent별 가상카드로 되지 않을까?
 
+- 가상카드: 기업이 공급자 결제용으로 따로 발급하고 한도와 만료일을 거는 카드 번호([Four Pillars, "x402에 대한 모든 것"](https://research.4pillars.io/ko/research/all-about-x402), PDF 66쪽)
+  - 실물 카드 없이 발급하는 카드 번호
+  - 기존 카드 계좌나 신용 한도에 연결
+  - 번호마다 한도, 만료일, 쓸 수 있는 가맹점을 따로 걸 수 있음
+  - 출처(PDF 66쪽)가 받치는 것은 공급자 결제용이라는 점과 한도, 만료일까지임. 실물 카드 없이 발급하는 점, 카드 계좌나 신용 한도에 연결하는 점, 가맹점을 거는 점은 이 글에서 확인하지 않았음
 - 4.3절(위임 범위의 문제)만 보면, 이미 있는 가상카드로 풀린다는 반론이 나옴
 - 이 반론은 상당 부분 맞음. 그래도 풀리지 않는 문제가 남음
 
@@ -551,7 +570,7 @@ Payment rails              Cards, stablecoins, etc.
           liability
 ```
 
-- 위쪽 가지는 5.1절(가상카드가 이미 하는 것), 아래쪽 가지는 5.2절(가상카드로 풀리지 않는 것)에서 다룸
+- 가상카드로 풀리는 것은 5.1절(가상카드가 이미 하는 것), 풀리지 않는 것은 5.2절(가상카드로 풀리지 않는 것)에서 다룸
 
 ### 5.1 가상카드가 이미 하는 것: 한도와 기간을 건 카드
 
@@ -593,7 +612,7 @@ Payment rails              Cards, stablecoins, etc.
   - 새 서비스를 쓸 때마다 사람이 계정을 만들고 카드를 등록해야 하는 것도 같은 문제임
   - Circle은 x402가 "allows any agent to pay any merchant without first needing to create an account or add a credit card"라고 씀(같은 글)
 - **가맹점의 확인**
-  - 위의 두 문제는 돈을 **내는** 쪽의 문제임. 돈을 **받는** 쪽에도 문제가 있음
+  - 건당 비용과 결제 순간의 인증은 돈을 **내는** 쪽의 문제임. 돈을 **받는** 쪽에도 문제가 있음
   - 가맹점은 결제하러 온 Agent가 정말 어떤 사람에게서 권한을 받았는지 알 수 없음. 그래서 봇으로 보고 막기 쉬움
   - 카드 회사들이 이 문제를 풀려고 함
     - x402 보고서: 비자는 Trusted Agent Protocol(TAP)과 Visa Intelligent Commerce를, 마스터카드는 Agent Pay를 통해 "에이전트 식별, 사용자 위임과 결제 승인을 기존 카드망에 연결하는 체계를 준비하고 있다"(PDF 56쪽)
@@ -603,7 +622,7 @@ Payment rails              Cards, stablecoins, etc.
   - 이 규정대로라면, 사람이 권한을 준 Agent가 범위 안에서 한 결제는 카드 주인이 승인한 결제 쪽에 들어갈 수 있음
   - 남는 문제는 Agent가 받은 범위를 넘었을 때, 그리고 범위 안에서 잘못 판단했을 때 누가 책임지는가임
   - Agent에게 준 권한이 이 규정의 "authority"에 해당하는지를 다룬 판례나 감독 당국의 해석은 이 글에서 확인하지 않았음
-  - 이 문제는 7절(정리와 열린 질문)에 남김
+  - 이 문제는 7절(정리)의 앞으로 이야기될 것들에 남김
 
 ```text
 [한국어]
@@ -632,7 +651,7 @@ Payment rails              Cards, stablecoins, etc.
                     - Liability: who bears a wrong payment?
 ```
 
-- 네 문제를 결제의 어느 쪽에서 생기는지로 나눈 그림임
+- 네 문제는 결제의 어느 쪽에서 생기는지로 나뉨
 - 건당 비용과 인증은 Agent 쪽, 가맹점의 확인은 가맹점 쪽, 책임은 양쪽 모두의 문제임
 
 ```text
@@ -667,17 +686,17 @@ Payment rails              Cards, stablecoins, etc.
     +-- Agent payments within scope but on a wrong judgment
 ```
 
-- 위의 두 칸은 대금 오류 규정이 나누는 방식임. 권한이 있었는지가 기준임
-- 권한을 받은 Agent가 범위 안에서 한 결제는 왼쪽 칸에 들어갈 수 있음
-- 아래 두 경우는 어느 칸에 들어갈지 정해져 있지 않음. Agent 결제의 책임 문제는 여기에 남음
+- 대금 오류 규정은 결제를 권한이 있었는지로 나눔
+- 권한을 받은 Agent가 범위 안에서 한 결제는 권한이 있는 결제에 들어갈 수 있음
+- 범위를 넘은 결제와 범위 안에서 잘못 판단한 결제는 어느 쪽에 들어갈지 정해져 있지 않음. Agent 결제의 책임 문제는 여기에 남음
 
-## 6. 결론: 결제의 단위와 그 시스템이 나올 길이 바뀜
+## 6. 결론: 진짜 Agent Payment를 위해서는?
 
-- 바뀌는 것은 두 가지임
+- 바뀌어야 하는 것은 두 가지임
 
 ```text
 [한국어]
-  바뀌는 것
+  바뀌어야 하는 것
     |
     +-- 결제의 단위
     |     사람 하나  ==>  사람 + Agent + 위임 범위
@@ -689,7 +708,7 @@ Payment rails              Cards, stablecoins, etc.
 
 ```text
 [English]
-  What changes
+  What has to change
     |
     +-- The unit of payment
     |     one person  ==>  person + Agent + delegated scope
@@ -699,7 +718,7 @@ Payment rails              Cards, stablecoins, etc.
           a new system built for Agents from the start
 ```
 
-- 위쪽 가지는 6.1절(결제 단위의 변화), 아래쪽 가지는 6.2절(시스템이 나올 길)에서 다룸
+- 결제의 단위는 6.1절(결제 단위의 변화)에서, 그 시스템이 나올 길은 6.2절(결제 시스템)에서 다룸
 
 ### 6.1 결제 단위의 변화: Agent가 아니라 위임에 맞춘 시스템
 
@@ -738,14 +757,14 @@ Payment unit today                  Payment unit with Agents
                                      Merchant (verifies the delegation)
 ```
 
-- 왼쪽은 결제하는 사람과 책임지는 사람이 같음
-- 오른쪽은 둘이 갈라짐. 사람은 책임을 지고 범위를 정하며, Agent는 그 범위 안에서 판단하고 결제함
-- 그래서 오른쪽에는 왼쪽에 없던 두 가지가 필요함
+- 지금은 결제하는 사람과 책임지는 사람이 같음
+- Agent 시대에는 둘이 갈라짐. 사람은 책임을 지고 범위를 정하며, Agent는 그 범위 안에서 판단하고 결제함
+- 그래서 Agent 시대의 결제에는 지금 없던 두 가지가 필요함
   - 사람이 Agent에게 **범위를 정해 맡기는** 방법: 4.2절(거래마다 미리 승인할 수 없음)과 4.3절(속도와 세밀함)의 문제
   - 가맹점이 그 위임을 **믿을 수 있게 하는** 방법: 5.2절(가상카드로 풀리지 않는 것)의 가맹점의 확인
 - 정리하면, 필요한 것은 "Agent에게 맞춘 시스템"이 아니라 "**사람이 Agent에게 결제를 맡기는 일에 맞춘 시스템**"임
 
-### 6.2 시스템이 나올 길: 카드 시스템을 고쳐 쓰는 길과 새 시스템을 만드는 길
+### 6.2 결제 시스템: 기존의 카드망을 고치거나, 처음부터 새로 짓거나
 
 - 이 시스템이 어디서 나올지는 아직 정해지지 않음. 길은 둘임
   - **카드 시스템을 고쳐 쓰는 길**: 5.2절(가상카드로 풀리지 않는 것)에서 본 비자 TAP와 마스터카드 Agent Pay
@@ -787,13 +806,14 @@ Payment unit today                  Payment unit with Agents
 - 두 길은 따로 가지 않음. 카드 회사가 새 시스템에 들어가고, 새 시스템의 돈이 카드 정산에 쓰이고 있음
 - 그래서 결론은 어느 한쪽이 아니라 "위임에 맞게 바뀌어야 함"까지임
 
-## 7. 정리와 열린 질문: 한 줄 정의와 남은 질문 셋
+## 7. 정리
 
-- 한 줄 정리: Agent Payment는 판단하는 프로그램에게 사람의 결제 권한을 범위를 정해 맡기고, 돈을 받는 쪽이 그 위임을 믿을 수 있게 하는 기술임
-- 열린 질문
+- 정리: Agent Payment는 Agent(판단하는 프로그램)에게 사람의 결제 권한을 범위를 정해 맡기고, 돈을 받는 쪽이 그 위임을 믿을 수 있게 하는 기술임
+- 앞으로 이야기될 것들
   - **판단의 정도**: 2.1절(Agent의 정의)은 판단을 Agent의 핵심으로 봄. 그런데 판단에도 정도가 있음. 사람이 상품과 가격을 정하고 Agent는 실행만 하는 경우와, 무엇을 살지까지 Agent가 정하는 경우는 필요한 위임 범위가 다름
   - **책임**: Agent가 받은 범위를 넘거나 잘못 판단한 결제는 누가 책임지는가. 맡긴 사람인가, Agent를 만든 회사인가, 결제를 처리한 회사인가
   - **어느 시장이 먼저인가**: 3.1절(흔한 오해)의 쿠팡 예는 소비자 구매임. 그런데 x402 보고서는 2028년까지 소비자 구매에서는 "건별 승인과 기존 체크아웃이 상당 부분 유지될 것"으로 보고, 분석을 기업 간 거래(B2B) 중심으로 했음([Four Pillars, "x402에 대한 모든 것"](https://research.4pillars.io/ko/research/all-about-x402), PDF 63쪽). 그렇다면 Agent Payment를 설명할 때 쿠팡 예보다 API나 데이터 구매 예가 더 맞을 수 있음
+- 주의: 이렇게 Agent와 Agent Payment를 나눠서 말해도, 밖에서 둘을 섞어 쓴다면 그대로 받아들여야 함
 
 ```text
 [한국어]
@@ -819,6 +839,6 @@ Payment unit today                  Payment unit with Agents
                                                            consumer purchases or B2B?
 ```
 
-- 한 줄 정의를 세 조각으로 나누고, 열린 질문이 어느 조각에 걸리는지 표시한 그림임
-- 판단의 정도는 첫 조각, 책임은 둘째 조각에 걸림
+- 앞으로 이야기될 것들 가운데 둘은 정의 안에 걸림
+- 판단의 정도는 "판단하는 프로그램"에, 책임은 "결제 권한을 범위를 정해 맡기는 일"에 걸림
 - 어느 시장이 먼저인지는 정의 밖의 질문임. 이 기술이 어디서 먼저 쓰일지에 관한 것임
