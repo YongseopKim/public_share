@@ -54,12 +54,13 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 ## 2. Agent: 자동화 프로그램 + 판단
 
 - Agent는 자동화 프로그램의 한 종류임
+- 여기서 자동화는, 사람이 처음에 한 번 정해 두면 그 뒤로는 실행할 때마다 사람이 그 자리에 없어도 프로그램이 대신 실행한다는 뜻임
 - 자동화 프로그램 가운데 **판단**이 들어간 것만 Agent라고 부름
 
 ```text
 [한국어]
 +--------------------------------------------------------+
-| 자동화 프로그램: 사람 대신 일을 처리함                 |
+| 자동화 프로그램: 사람이 한 번 정해 두면, 실행은 대신함 |
 |                                                        |
 |   +------------------------+  +----------------------+ |
 |   | 판단 없는 자동화       |  | 판단하는 자동화      | |
@@ -72,7 +73,7 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 ```text
 [English]
 +--------------------------------------------------------+
-| Automation program: does work on a person's behalf     |
+| Automation program: set once by a person, then runs    |
 |                                                        |
 |   +------------------------+  +----------------------+ |
 |   | No-judgment automation |  | Judging automation   | |
@@ -82,9 +83,30 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 +--------------------------------------------------------+
 ```
 
-- 자동화 프로그램은 모두 사람 대신 일을 처리함
+- 자동화 프로그램은 모두, 사람이 처음에 정해 둔 뒤로는 사람 없이 실행됨
 - 자동화 프로그램은 판단이 있는지로 둘로 나뉨. 판단하는 쪽만 Agent임
-- Agent가 무엇인지는 2.1절(정의)에서, 판단 없는 자동화와 어떻게 다른지는 2.2절(Agent vs 자동화 프로그램)에서 다룸
+- 둘의 차이는 사람이 처음에 무엇까지 정하는가에 있음
+
+```text
+[한국어]
+                  처음에 사람이 정하는 것   실행할 때 사람이 하는 일
+----------------  ------------------------  ------------------------
+판단 없는 자동화  무엇을, 누구에게, 얼마에  없음
+Agent             목표와 조건만             없음
+```
+
+```text
+[English]
+                        What the person sets first    What the person does at run time
+----------------------  ----------------------------  --------------------------------
+No-judgment automation  What, to whom, how much       Nothing
+Agent                   Only the goal and conditions  Nothing
+```
+
+- 실행할 때 사람이 빠지는 것은 둘 다 같음. 이것이 자동화임
+- 판단 없는 자동화는 무엇을, 누구에게, 얼마에 낼지를 사람이 처음에 정함
+- Agent는 사람이 목표와 조건만 정하고, 무엇을 할지는 Agent가 정함. 이것이 판단임
+- Agent가 무엇인지는 2.1절(정의)에서, 판단 없는 자동화와 어떻게 다른지는 2.2절(Agent vs 판단 없는 자동화)에서 다룸
 
 ### 2.1 정의: 사람 대신 일하고 스스로 판단함
 
@@ -115,7 +137,7 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 - 무엇을, 언제, 얼마에 할지는 Agent 안에서 정해짐
 - 이 세 가지를 Agent가 정한다는 점이 4.2절(거래마다 미리 승인할 수 없음)의 출발점이 됨
 
-### 2.2 Agent vs 자동화 프로그램: 판단이 있는지로 갈림
+### 2.2 Agent vs 판단 없는 자동화: 판단이 있는지로 갈림
 
 - 쿠팡 정기배송이나 은행 자동이체도 사람 대신 결제를 처리함
 - 그러나 이들은 판단하지 않음. 무엇을, 누구에게, 얼마를 낼지를 사람이 미리 정해 두었고, 프로그램은 그대로 실행할 뿐임
@@ -123,7 +145,7 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 
 ```text
 [한국어]
-                     자동화 프로그램           Agent
+                     판단 없는 자동화          Agent
                      (정기배송, 자동이체)      (리테일 Agent 등)
 -------------------  ------------------------  ------------------------
 무엇을, 얼마에 살지  사람이 미리 정함          Agent가 정함
@@ -134,7 +156,7 @@ Agent와 Agent Payment를 구분하고, Agent가 결제할 때 지금의 결제 
 
 ```text
 [English]
-                      Automation program        Agent
+                      No-judgment automation    Agent
                       (subscription, autopay)   (retail Agent, etc.)
 --------------------  ------------------------  ------------------------
 What, how much to buy Set by the person         Decided by the Agent
@@ -144,13 +166,13 @@ Payment approval      Once, in advance          Not possible per
 Judgment              None                      Yes
 ```
 
-- 자동화 프로그램과 Agent는 같은 일(사람 대신 결제)을 함
-- 차이는 "누가 정하는가"임. 자동화 프로그램은 사람이 미리 정하고, Agent는 스스로 정함. 이 차이가 곧 판단의 유무임
+- 판단 없는 자동화와 Agent는 같은 일(사람 대신 결제)을 함
+- 차이는 "누가 정하는가"임. 판단 없는 자동화는 사람이 미리 정하고, Agent는 스스로 정함. 이 차이가 곧 판단의 유무임
 - 결제 승인의 차이(처음에 한 번 미리 하는가, 거래마다 미리 할 수 없는가)가 4절(필요성)의 핵심 문제로 이어짐
 
 ```text
 [한국어]
-[자동화 프로그램의 워크플로우: 정기배송]
+[판단 없는 자동화의 워크플로우: 정기배송]
 
   사람: 상품, 금액, 주기를 정함
          |
@@ -174,7 +196,7 @@ Judgment              None                      Yes
 
 ```text
 [English]
-[Workflow of an automation program: subscription delivery]
+[Workflow of no-judgment automation: subscription delivery]
 
   Person: sets the product, amount and interval
          |
@@ -384,7 +406,7 @@ Payment rails              Cards, stablecoins, etc.
 
 ### 4.2 판단이 만드는 문제: 거래마다 미리 승인할 수 없음
 
-- 2.2절(Agent vs 자동화 프로그램)의 정기배송과 자동이체는 지금의 시스템으로도 됨. 상대와 금액을 사람이 **미리 승인**해 두었기 때문임
+- 2.2절(Agent vs 판단 없는 자동화)의 정기배송과 자동이체는 지금의 시스템으로도 됨. 상대와 금액을 사람이 **미리 승인**해 두었기 때문임
 - Agent는 다름. 어디서, 무엇을, 얼마에 살지를 Agent가 판단하므로, 사람이 거래 하나하나를 미리 승인할 수 없음
 
 ```text
