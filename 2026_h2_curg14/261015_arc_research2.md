@@ -1,6 +1,6 @@
 # arc-agent-hackathon-decision-20261015
 
-## [Agent Payment 한눈에 보기](1015/agent-payment.md)
+## [Agent Payment 한눈에 보기](261015/agent-payment.md)
 
 ```text
 [지금]        사람 ---- 직접 결제 ----> 가맹점     결제하는 쪽 = 책임지는 쪽
@@ -39,7 +39,7 @@
       비자 TAP, 마스터카드 Agent Pay                스테이블코인, x402, Nanopayments
 ```
 
-## [Circle, Arc, AI Agent, AI Agent Payment](1015/README.md#20261015-research)
+## [Circle, Arc, AI Agent, AI Agent Payment](261015/README.md#20261015-research)
 
 ```text
 +------------------------------+                                        +------------------------------+
@@ -60,7 +60,7 @@
 - (1): Circle은 Agent Stack을 Arc 쪽 기둥에 넣었음
 - (2): Agent Stack이 하는 일은 외부 제품에도 있음
 
-## [조사한 것: 기업 지급 결제와 에이전트 결제](1015/README.md#조사정리한-것)
+## [조사한 것: 기업 지급 결제와 에이전트 결제](261015/README.md#조사정리한-것)
 
 ```text
             | 기업 지급 결제                   | 에이전트 결제
@@ -94,7 +94,7 @@ Arc가 필요? | StableFX의 정산은 Arc에서만 됨   | Arc 없이도 돌아
             |                                  | MERGE Madrid
 ```
 
-## [결론: 가치마다의 판단과 행사](1015/README.md#저의-결론)
+## [결론: 가치마다의 판단과 행사](261015/README.md#저의-결론)
 
 ```text
 Arc 해커톤 참여는 우리에게 그만한 가치가 있는가?
